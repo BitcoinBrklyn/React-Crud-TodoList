@@ -15,6 +15,7 @@ function CreateUser() {
       .post("http://localhost:3003/createUser", { name, email, age })
       .then((result) => {
         console.log(result);
+        window.alert("User Added");
         navigate("/");
       })
       .catch((err) => console.log(err));

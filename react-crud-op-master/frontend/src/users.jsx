@@ -14,6 +14,7 @@ function Users() {
       .delete("http://localhost:3003/deleteUser/" + id)
       .then((res) => {
         console.log(res);
+        window.alert("Item Deleted");
         window.location.reload();
       })
       .catch((err) => console.log(err));

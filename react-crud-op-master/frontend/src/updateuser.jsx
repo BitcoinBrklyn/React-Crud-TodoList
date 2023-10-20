@@ -12,6 +12,7 @@ function UpdateUser() {
       .get(`http://localhost:3003/getUser/${id}`)
       .then((result) => {
         console.log(result);
+        window.alert("Updated !");
         setName(result.data.name);
         setEmail(result.data.email);
         setAge(result.data.age);
