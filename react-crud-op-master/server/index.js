@@ -44,8 +44,11 @@ app.delete("/deleteUser/:id", (req, res) => {
     .catch((err) => res.json(err));
 });
 app.post("/CreateUser", (req, res) => {
+  // Creates a new User & store in DB show it to client-side.
   UserModel.create(req.body)
+    // Call the result of the schema user built!
     .then((users) => res.json(users))
+
     .catch((err) => res.json(err));
 });
 
