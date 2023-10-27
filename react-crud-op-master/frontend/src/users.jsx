@@ -20,12 +20,12 @@ function Users() {
       .catch((err) => console.log(err));
   };
   return (
-    <div className="d-flex vh-100 bg-primary justify-content-center ali+gn-items-center">
-      <div className="w-50 bg-white rounded p-3">
+    <div className="d-flex vh-100 bg-black justify-content-center ali+gn-items-center">
+      <div className="w-50 bg-black rounded p-3">
         <Link to="/create" className="btn btn-success">
           Add +
         </Link>
-        <table className="table">
+        <table className="table" style={{ color: "grey" }}>
           <thead>
             <tr>
               <th>Name</th>
