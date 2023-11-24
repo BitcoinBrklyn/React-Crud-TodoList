@@ -11,9 +11,6 @@ const uri = process.env.MONGODB_URI;
 mongoose.connect(uri, { UseNewUrlParser: true, useUnifiedTopology: true }).then(() => {
   console.log("mongodb connected");
 });
-// mongoose.connect(
-//   "mongodb+srv://bitcoinbrklyn:iyegang718@cluster0.0iwo0sk.mongodb.net/reactdatabase?retryWrites=true&w=majority"
-// );
 
 app.get("/", (req, res) => {
   UserModel.find({})
@@ -58,5 +55,5 @@ app.post("/CreateUser", (req, res) => {
 });
 
 app.listen(3003, () => {
-  console.log("App Server is running!node ");
+  console.log("App Server is running! ");
 });
