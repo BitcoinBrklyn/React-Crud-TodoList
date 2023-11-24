@@ -5,10 +5,15 @@ const UserModel = require("./models/users");
 const app = express();
 app.use(cors());
 app.use(express.json());
+require("dotenv").config();
 
-mongoose.connect(
-  "mongodb+srv://bitcoinbrklyn:iyegang718@cluster0.0iwo0sk.mongodb.net/reactdatabase?retryWrites=true&w=majority"
-);
+const uri = process.env.MONGODB_URI;
+mongoose.connect(uri, { UseNewUrlParser: true, useUnifiedTopology: true }).then(() => {
+  console.log("mongodb connected");
+});
+// mongoose.connect(
+//   "mongodb+srv://bitcoinbrklyn:iyegang718@cluster0.0iwo0sk.mongodb.net/reactdatabase?retryWrites=true&w=majority"
+// );
 
 app.get("/", (req, res) => {
   UserModel.find({})
